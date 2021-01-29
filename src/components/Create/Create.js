@@ -1,8 +1,10 @@
 import { useState } from "react";
 import {useDispatch} from 'react-redux'
+import { addBlogAC, addNewBlogAC } from "../../redux/actionCreators";
 
 const Create = () => {
 const dispatch = useDispatch()
+
 const [title, setTitle] = useState(null)
 const [body, setBody] = useState(null)
 const [author, setAuthor] = useState('')
@@ -25,7 +27,8 @@ const authorHandler = (e)=> {
 const submitHandler = (e) => {
 e.preventDefault()
 
-// const {title, body, author} = e.target
+const newBlog =  {title, body, userId: author, id: 80}
+dispatch(addNewBlogAC(newBlog))
 }
 
   return ( 
@@ -45,7 +48,7 @@ e.preventDefault()
       </label>
       <select onChange={authorHandler}>
        
-       
+      <option selected value="">Choose author</option>
         <option value="guest">Guest</option>
         <option value="me">Me</option>
       </select>

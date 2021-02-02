@@ -21,7 +21,16 @@ function App() {// создаем маршруты. Если маршрут ди
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then(res=> res.json())
     .then(res=>res.splice(res.length - 10))
-    .then(res=> dispatch(addBlogAC(res)))
+    // .then(res => {
+    //   console.log(res)
+    //   return res.map(el=>el.isLiked = false)
+     
+      
+    // })
+    .then(res=>{
+      // console.log(res)
+      return  dispatch(addBlogAC(res))
+    })
     
   }, [])
 

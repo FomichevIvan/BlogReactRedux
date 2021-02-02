@@ -1,15 +1,18 @@
-import { ADD_BLOG, ADD_NEW_BLOG } from "./actionTypes";
+import { ADD_BLOGS, ADD_NEW_BLOG, DEL_BLOG } from "./actionTypes";
 
 // 3. пишем редьюсер
 
-export const blogReducer = (state = [[]], action) => {
+export const blogReducer = (state = [], action) => {
   switch (action.type) {
-    case ADD_BLOG:
-      return [...state, action.payload];
-    case ADD_NEW_BLOG: 
-      console.log(state);  
-         
-      return [[...[...state[0]], action.payload]]
+    case ADD_BLOGS:
+      return [...state, ...action.payload];
+    
+      case ADD_NEW_BLOG:            
+      return [...state, action.payload]
+      
+      case DEL_BLOG:
+      return [...state.filter(el=> el.id != action.payload)]
+
     
     default:
       return state;

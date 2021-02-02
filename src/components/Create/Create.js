@@ -1,35 +1,42 @@
 import { useState } from "react";
 import {useDispatch} from 'react-redux'
-import { addBlogAC, addNewBlogAC } from "../../redux/actionCreators";
+import {addNewBlogAC } from "../../redux/actionCreators";
 
 const Create = () => {
 const dispatch = useDispatch()
 
+// сохраняем 
 const [title, setTitle] = useState(null)
 const [body, setBody] = useState(null)
-const [author, setAuthor] = useState('')
+const [author, setAuthor] = useState(null)
+const [newBlog, setNewBlog] = useState(null)
+
 
 const titleHandler = (e)=> {
   setTitle(e.target.value)
+
   
 }
 const bodyHandler = (e)=> {
   setBody(e.target.value)
-  console.log(body);
-  
+
 }
 const authorHandler = (e)=> {
  setAuthor(e.target.value)
-  console.log(author);
-  
+
 }
 
 const submitHandler = (e) => {
 e.preventDefault()
 
-const newBlog =  {title, body, userId: author, id: 80}
+const newBlog =  {title, body, userId: author, id: Math.round(Math.random()*1000)}
 dispatch(addNewBlogAC(newBlog))
+e.target.name.value = ''
+e.target.body.value = ''
+e.target.author.value = 'Choose author'
+setNewBlog(`New Blog ${title} was added!)`)
 }
+
 
   return ( 
     <div className="create">
@@ -38,22 +45,23 @@ dispatch(addNewBlogAC(newBlog))
       <label>
         Blog title:
       </label>
-      <input type="text" placeholder="title" onChange={titleHandler} required/>
+      <input name="name" type="text" placeholder="title" onChange={titleHandler} required/>
       <label>
         Blog body:
       </label>
-      <textarea type="text" required placeholder="text here" onChange={bodyHandler}></textarea>
+      <textarea name="body" type="text" required placeholder="text here" onChange={bodyHandler}></textarea>
       <label>
         Blog author:
       </label>
-      <select onChange={authorHandler}>
+      <select name="author" onChange={authorHandler}>
        
-      <option selected value="">Choose author</option>
+      <option  defaultValue="">Choose author</option>
         <option value="guest">Guest</option>
         <option value="me">Me</option>
       </select>
       <button>Add Blog</button>
       </form>
+      <p>{newBlog}</p>
     </div>
    );
 }

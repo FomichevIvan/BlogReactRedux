@@ -131,6 +131,13 @@ h1{
   flex-direction: column;
     
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 40px;
+}
 .detailed span {
   color: #2cb194;
 }
@@ -232,3 +239,4 @@ text-align: right;
 .home {
   padding-left: 100px;
 }
+

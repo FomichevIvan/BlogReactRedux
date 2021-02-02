@@ -11,5 +11,5 @@ React, Redux
 <hr>
 
 
-<img src="https://github.com/FomichevIvan/BlogReactRedux/blob/master/img/eachpage.png" width="70%">
+<img src="https://github.com/FomichevIvan/BlogReactRedux/blob/master/img/eachage.png" width="70%">
 <hr>

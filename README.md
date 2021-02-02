@@ -1,2 +1,3 @@
-# Blog c React&Redux
+# Blog c React/Redux
 Верстка - CSS
+React, Redux

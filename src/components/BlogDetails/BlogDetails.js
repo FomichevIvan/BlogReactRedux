@@ -8,18 +8,22 @@ import {delBlogAC} from '../../redux/actionCreators'
 const BlogDetails = () => {
   const dispatch = useDispatch()// подключаем диспатч
   const store = useSelector(store => store)// выгружаем стор из редакс
-  // console.log(store);
+  console.log(store);
 
 
   // подключаем возможность перемещаться по страницам
   const history = useHistory()
+  const id = history.location.pathname.match(/\d+$/gm)[0]//используем хистори и регулярки, чтобы получить айди
+// console.log(h);
   // хэндлер, чтобы возвращаться назад
   const handlerBack = () => {
     history.push('/')
   }
   
-  const {id} = useParams()// мы задали в Апп.жс динамический маршрут. теперь мы используем данный айди
-  const blog = store.filter(el => el.id == id)[0]// получили блог из стора, он нулевой элемент нашего массива блогов
+  // const r = h.match(/\d+$/gm)[0]
+  // console.log(r);
+  // const {id} = useParams()// мы задали в Апп.жс динамический маршрут. теперь мы используем данный айди
+  const blog = store.filter(el => el.id === +id)[0]// получили блог из стора, он нулевой элемент нашего массива блогов
 
   //удаление блога
   const handlerDel = () => {    

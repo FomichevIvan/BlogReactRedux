@@ -11,7 +11,7 @@ export const blogReducer = (state = [], action) => {
       return [...state, action.payload]
       
       case DEL_BLOG:
-      return [...state.filter(el=> el.id != action.payload)]
+      return [...state.filter(el=> el.id !== +action.payload)]
 
     
     default:

@@ -10,7 +10,7 @@ const [like, setLike] = useState(false)
   }
   
   return (  
-    <i onClick={likeHandler} className={!like ? "star fa fa-star-o" : "star fa fa-star" }aria-hidden="true"></i>
+    <i onClick={likeHandler} className={!like ? "star fa fa-star-o" : "star fa fa-star" } aria-hidden="true"></i>
   );
 }
  

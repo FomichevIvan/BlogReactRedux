@@ -1,10 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Star from "../Star/Star";
 
 const BlogList = ({ blogs, delHandler }) => {// получаем блоги, рендерим
 
-  const likeHandler = (e) => {
-    console.log(e.targer);
-  }
+// const [like, setLike] = useState(false)
+
+  // const likeHandler = (e) => {
+
+  //   console.log(e.target);
+  //   setLike(!like)
+  // }
 
   return (
     <div className="home">
@@ -21,8 +27,9 @@ const BlogList = ({ blogs, delHandler }) => {// получаем блоги, р�
              
             </div>
             </Link>
-            <div onClick={likeHandler}><i  className="star fa fa-star-o" aria-hidden="true"></i></div>
-            </div> 
+            <Star />
+            {/* <i onClick={likeHandler} className={!like ? "star fa fa-star-o" : "star fa fa-star" }aria-hidden="true"></i> */}
+            </div>
           );
         })}
     </div>

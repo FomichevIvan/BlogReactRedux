@@ -20,7 +20,7 @@ const BlogList = ({ blogs, delHandler }) => {// получаем блоги, р�
              
             </div>
             </Link>
-            <Star />
+            <Star key={blog.id}/>
             </div>
           );
         })}

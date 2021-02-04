@@ -11,21 +11,22 @@ import Create from "./components/Create/Create";
 import BlogDetails from "./components/BlogDetails/BlogDetails";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
-import { addBlogAC } from "./redux/actionCreators";
+import { addBlogAC, loadBlogsAC } from "./redux/actionCreators";
+
 
 function App() {// создаем маршруты. Если маршрут динамический, то он будет переходить на нужный адрес
   const dispatch = useDispatch()
 
 // внутри юзэффект подгружаем блоги с АПИ, обрезая до 10 шт
-  useEffect(()=> {
-    fetch('https://jsonplaceholder.typicode.com/posts')// запрашиваю посты
-    .then(res=> res.json())// преобразую в джейсон
-    .then(res=>res.splice(res.length - 10))// обрезаю (хочу только 10 последних)
-    .then(res => res.map(el=> ({...el, isLiked: false})))
-    .then(res=>dispatch(addBlogAC(res))//пишу в стор
-    )
+  // useEffect(()=> {
+  //   fetch('https://jsonplaceholder.typicode.com/posts')// запрашиваю посты
+  //   .then(res=> res.json())// преобразую в джейсон
+  //   .then(res=>res.splice(res.length - 10))// обрезаю (хочу только 10 последних)
+  //   .then(res => res.map(el=> ({...el, isLiked: false})))
+  //   .then(res=>dispatch(loadBlogsAC(res))//пишу в стор
+  //   )
     
-  }, [])
+  // }, [])
 
 
   return (

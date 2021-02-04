@@ -4,13 +4,6 @@ import Star from "../Star/Star";
 
 const BlogList = ({ blogs, delHandler }) => {// получаем блоги, рендерим
 
-// const [like, setLike] = useState(false)
-
-  // const likeHandler = (e) => {
-
-  //   console.log(e.target);
-  //   setLike(!like)
-  // }
 
   return (
     <div className="home">
@@ -28,7 +21,6 @@ const BlogList = ({ blogs, delHandler }) => {// получаем блоги, р�
             </div>
             </Link>
             <Star />
-            {/* <i onClick={likeHandler} className={!like ? "star fa fa-star-o" : "star fa fa-star" }aria-hidden="true"></i> */}
             </div>
           );
         })}

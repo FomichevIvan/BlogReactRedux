@@ -12,6 +12,7 @@ import BlogDetails from "./components/BlogDetails/BlogDetails";
 import Footer from "./components/Footer/Footer";
 import { useEffect } from "react";
 import { addBlogAC, loadBlogsAC } from "./redux/actionCreators";
+import Favorite from "./components/Favorite/Favorite";
 
 
 function App() {// создаем маршруты. Если маршрут динамический, то он будет переходить на нужный адрес
@@ -38,6 +39,7 @@ function App() {// создаем маршруты. Если маршрут ди
             <Route exact path='/' component={Home}/>
             <Route exact path='/blogs/:id' component={BlogDetails}/>
             <Route exact path='/create' component={Create}/>
+            <Route exact path='/favorite' component={Favorite}/>
          
           </Switch>
           <Footer/>

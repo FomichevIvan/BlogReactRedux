@@ -42,8 +42,8 @@ function App() {// создаем маршруты. Если маршрут ди
             <Route exact path='/favorite' component={Favorite}/>
          
           </Switch>
-          <Footer/>
         </div>
+          <Footer/>
       </div>
     </Router>
   );

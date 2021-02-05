@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 /* убираем отступы, задаем шрифт и его цвет глобально */
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: rgb(97, 97, 97);  
+  color: rgb(97, 97, 97);
 }
 .card {
   width: 350px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .card i {
@@ -19,13 +18,11 @@
 }
 
 .footer {
-  margin-top: 20px;
-  position: sticky;
-  /* margin-top: auto; */
   display: flex;
-  border-top: 1px solid #f2f2f2;
-  max-width: 600px;
   align-items: center;
+  margin: auto;
+  border-top: 1px solid #f2f2f2;
+  width: 600px;
 }
 /* .home {
   height: 600px;
@@ -36,27 +33,27 @@
   min-height: 100%;
 } */
 .footer nav {
-  
   display: block;
   margin: 0 auto;
   font-size: 0.7rem;
-  padding-top: 10px;
+  padding: 10px;
 }
 /* марджин центрирует по блоку */
 .navbar {
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  width: 600px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
   color: #2cb194;
 }
+
 /* выравнивание ссылок по правому краю контейнера */
 .navbar .links {
-  margin-left: auto;      
+  margin-left: auto;
 }
 /* убрали подчеркивание ссылок, раздвинули ссылки */
 .navbar a {
@@ -72,9 +69,11 @@
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
-  margin: 40px auto;
+  justify-content: center;
+  width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  flex-grow: 1;
 }
 
 .but {
@@ -82,26 +81,31 @@
   margin-bottom: 20px;
 }
 .button {
-  min-width: 60px;
+  min-width: 100px;
   padding: 5px;
   border: none;
   border-radius: 3px;
   margin-bottom: 10px;
   background-color: #ff5185;
   color: #f2f2f2;
-  
 }
-.home button {
+/* .home button {
   margin: 0 auto;
   align-items: center;
 
-}
+} */
 
-.button[disabled] {
+/* .button[disabled] {
+  background-color: grey;
+} */
+
+.button:hover {
   background-color: grey;
 }
 
-
+.button:focus {
+  outline: none;
+}
 
 .title {
   font-weight: 800;
@@ -111,7 +115,6 @@
 .author {
   font-weight: 800;
   padding-bottom: 10px;
-  
 }
 
 .text {
@@ -122,25 +125,25 @@
 
 .blog:hover {
   /* max-width: 300px;  */
-  box-shadow: 5px 6px 8px rgba(0,0,0,0.1);
+  box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.1);
 }
 
 .blog {
-margin: 10px;
-margin-left: 0;
-width: 100%;
-
+  margin: 10px;
+  margin-left: 0;
+  width: 100%;
 }
-.blog p{
+.blog p {
   color: #ff5185;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #2cb194;
- 
 }
 
-h1{
+h1 {
   margin-bottom: 10px;
 }
 
@@ -154,7 +157,6 @@ h1{
 .detailed {
   display: flex;
   flex-direction: column;
-    
 }
 
 .buttons {
@@ -181,12 +183,9 @@ h1{
 }
 
 article span {
-font-weight: 1000;
-font-size: 1.2rem;
-text-align: right;
-
-
-
+  font-weight: 1000;
+  font-size: 1.2rem;
+  text-align: right;
 }
 
 .create {
@@ -196,41 +195,57 @@ text-align: right;
   text-align: center;
 }
 
-.create  h2 {
+.create h2 {
   text-align: left;
   display: block;
   margin-bottom: 10px;
-
 }
 
 /* .create h2 {
   text-align: left;
 } */
 
-.create input, textarea, select{
+.create input,
+textarea,
+select {
   text-align: left;
   /* min-width: 300px; */
   width: 100%;
   display: block;
   margin-top: 5px;
   margin-bottom: 15px;
-  border: 1px solid #2cb194 ;
+  border: 1px solid #2cb194;
   border-radius: 3px;
   background-color: #fff7f7;
   box-sizing: border-box;
 }
+.create input:focus,
+textarea:focus,
+select:focus {
+  text-align: left;
+  /* min-width: 300px; */
+  width: 100%;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #2cb194;
+  border-radius: 3px;
+  background-color: #fff7f7;
+  box-sizing: border-box;
+  /* outline: ridge; */
+}
+
 .create textarea {
   min-height: 100px;
 }
 
-
-.create label  {
+.create label {
   text-align: left;
   display: block;
   font-weight: 500;
 }
 
-.create button  {
+.create button {
   margin-top: 15px;
   padding: 5px;
   border: none;
@@ -238,7 +253,7 @@ text-align: right;
   margin-bottom: 10px;
   background-color: #ff5185;
   color: #f2f2f2;
- text-align: center;
+  text-align: center;
 }
 .home h1 {
   text-align: left;
@@ -249,16 +264,11 @@ text-align: right;
 .create h2 {
   text-align: center;
   padding-bottom: 20px;
-  
 }
 
 .home h2 {
   padding-left: 50px;
   margin-bottom: 25px;
-}
-
-.content {
-  height: 100hv;
 }
 
 .home {
@@ -276,4 +286,15 @@ text-align: right;
   width: 10px;
   height: 10px;
   cursor: pointer;
+}
+
+.contBut {
+  display: flex;
+  justify-content: space-around;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }

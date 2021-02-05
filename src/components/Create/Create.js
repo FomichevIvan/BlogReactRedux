@@ -1,9 +1,11 @@
 import { useState } from "react";
 import {useDispatch} from 'react-redux'
 import {addNewBlogAC } from "../../redux/actionCreators";
+import {useHistory} from 'react-router-dom'
 
 const Create = () => {
 const dispatch = useDispatch()
+const history = useHistory()
 
 // сохраняем 
 const [title, setTitle] = useState(null)
@@ -37,6 +39,10 @@ e.target.author.value = 'Choose author'
 setNewBlog(`New Blog ${title} was added!)`)
 }
 
+const handlerBack = () => {
+  history.push('/')
+}
+
 
   return ( 
     <div className="create">
@@ -59,7 +65,10 @@ setNewBlog(`New Blog ${title} was added!)`)
         <option value="guest">Guest</option>
         <option value="me">Me</option>
       </select>
-      <button>Add Blog</button>
+     <div className="contBut">
+     <button className="button">Add Blog</button>
+      {newBlog ? <button  onClick={handlerBack} className="button">Back to Blogs</button> : null}
+     </div>
       </form>
       <p>{newBlog}</p>
     </div>

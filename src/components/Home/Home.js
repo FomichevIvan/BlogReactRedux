@@ -2,32 +2,36 @@ import { useSelector } from "react-redux";
 import BlogList from "../BlogList/BlogList";
 import { loadBlogsAC } from "../../redux/actionCreators";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+
 
 const Home = () => {
-  const [hide, setHide] = useState(false);
+
   const dispatch = useDispatch();
+  const blogs = useSelector((store) => store);
+
+
+
+
   const loadHandler = () => {
-    dispatch(loadBlogsAC());
-    setHide(!hide);
+    dispatch(loadBlogsAC()) 
   };
   // подгружаем стор
-  const blogs = useSelector((store) => store);
   //передаем массив блогов в дочерний элемент на отрисовку
   return (
     <>
-      {!hide ? (
-        <div className="home">
-          <button disabled={hide} className="center button" onClick={loadHandler}>
-            {hide ? "Blogs loaded!" : "Load blogs"}
-          </button>
-        </div>
-      ) : (
+    
+      {blogs.length ?  (
         <div className="home">
           {/* <button disabled={hide} className="button" onClick={loadHandler}>
             {hide ? "Blogs loaded!" : "Load blogs"}
           </button> */}
-          <BlogList blogs={blogs} />
+          {<BlogList blogs={blogs} />}
+        </div>
+      )  :(
+        <div className="home">
+          <button className="button" onClick={loadHandler}>
+            Load Blogs
+          </button>
         </div>
       )}
     </>

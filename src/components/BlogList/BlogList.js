@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Star from "../Star/Star";
 
-const BlogList = ({ blogs, delHandler }) => {// получаем блоги, рендерим
+const BlogList = ({ blogs }) => {// получаем блоги, рендерим
 
 
   return (
@@ -20,7 +19,7 @@ const BlogList = ({ blogs, delHandler }) => {// получаем блоги, р�
              
             </div>
             </Link>
-            <Star key={blog.id}/>
+            <Star isLiked={blog.isLiked} id={blog.id}/>
             </div>
           );
         })}

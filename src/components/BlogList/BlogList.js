@@ -4,7 +4,6 @@ import PaginationExampleShorthand from "../Pagination/Pagination";
 import { useState } from "react";
 
 const BlogList = ({ blogs }) => {
-  // const [allBlogs, setAllBlogs] =useState(blogs)
   const [page, setPage] = useState(1)
   const itemsOnPage = 10
   const lastBlogIndex = page * itemsOnPage
@@ -14,7 +13,7 @@ const BlogList = ({ blogs }) => {
 
   return (
     <div className="home">
-      <h2>HomePage</h2>
+      <h2>Blogs</h2>
 
       {
         currentBlogs.map((blog) => {

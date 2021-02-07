@@ -16,6 +16,7 @@ const Favorite = () => {
 
   return ( 
     <div className="home">
+    <h2>Favorite</h2>
       
 
           

@@ -1,8 +1,8 @@
 # Blog c React/Redux
-React \n
-State management - Redux \n
-Async state - ReduxThunk \n
-HTML - CSS, Semantic-UI  \n
+React <br>
+State management - Redux <br>
+Async state - ReduxThunk <br>
+HTML - CSS, Semantic-UI  <br>
 
 
 

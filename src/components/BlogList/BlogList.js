@@ -1,15 +1,23 @@
 import { Link } from "react-router-dom";
 import Star from "../Star/Star";
+import PaginationExampleShorthand from "../Pagination/Pagination";
+import { useState } from "react";
 
 const BlogList = ({ blogs }) => {
-  // получаем блоги, рендерим
+  // const [allBlogs, setAllBlogs] =useState(blogs)
+  const [page, setPage] = useState(1)
+  const itemsOnPage = 10
+  const lastBlogIndex = page * itemsOnPage
+  const firstBlogIndex = lastBlogIndex - itemsOnPage
+  const currentBlogs = blogs.slice(firstBlogIndex, lastBlogIndex)
+
 
   return (
-    <div className="nohome">
+    <div className="home">
       <h2>HomePage</h2>
 
-      {blogs &&
-        blogs.map((blog) => {
+      {
+        currentBlogs.map((blog) => {
           return (
             // обернули в ссылку, динамически задавая нужный адрес. Теперь при клике на блог, нас перекидывает именно на его страницу
             <div key={blog.id} className="card">
@@ -23,6 +31,7 @@ const BlogList = ({ blogs }) => {
             </div>
           );
         })}
+         {blogs.length > itemsOnPage ?<PaginationExampleShorthand blogs={blogs} itemsOnPage={itemsOnPage} page={page} setPage={setPage}/> : null}
     </div>
   );
 };

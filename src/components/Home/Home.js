@@ -4,6 +4,7 @@ import { loadBlogsAC } from "../../redux/actionCreators";
 import { useDispatch } from "react-redux";
 
 
+
 const Home = () => {
 
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const Home = () => {
             {hide ? "Blogs loaded!" : "Load blogs"}
           </button> */}
           {<BlogList blogs={blogs} />}
+         
         </div>
       )  :(
         <div className="home">

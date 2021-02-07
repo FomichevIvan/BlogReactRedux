@@ -48,6 +48,7 @@
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
+  font-family: "Quicksand";
   color: #2cb194;
 }
 
@@ -196,6 +197,7 @@ article span {
 }
 
 .create h2 {
+  font-family: "Quicksand";
   text-align: left;
   display: block;
   margin-bottom: 10px;
@@ -256,12 +258,18 @@ select:focus {
   text-align: center;
 }
 .home h1 {
+  font-family: "Quicksand";
   text-align: left;
   display: block;
   margin-bottom: 15px;
 }
 
+.home h2 {
+  font-family: "Quicksand";
+}
+
 .create h2 {
+  
   text-align: center;
   padding-bottom: 20px;
 }
@@ -297,4 +305,17 @@ select:focus {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+.links a{
+  color: grey;
+  font-size: 1.1em;
+}
+
+/* #root > div > div.content > div > div > div.ui.pagination.pointing.secondary.menu */
+#root > div > div.content > div > div > div.ui.pagination.pointing.secondary.menu > a.active.item {
+
+
+  /* font-size: x-large; */
+  color:#ff5185
 }

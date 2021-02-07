@@ -13,7 +13,7 @@ export const loadBlogsAC = () => (dispatch, getState) => {// здесь дисп
  
     fetch('https://jsonplaceholder.typicode.com/posts')// запрашиваю посты
     .then(res=> res.json())// преобразую в джейсон
-    .then(res=>res.splice(res.length - 10))// обрезаю (хочу только 10 последних)
+    // .then(res=>res.splice(res.length - 10))// обрезаю (хочу только 10 последних)
     .then(res => res.map(el=> ({...el, isLiked: false})))
     .then(res=>dispatch(addBlogAC(res))//пишу в стор
     )

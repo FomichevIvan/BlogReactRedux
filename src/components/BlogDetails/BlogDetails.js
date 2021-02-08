@@ -5,6 +5,8 @@ import {useSelector} from 'react-redux'
 import {delBlogAC, editBlogAC} from '../../redux/actionCreators'
 import { useState } from "react";
 import Edit from "../Edit/Edit";
+import DropdownExampleSimple from "../Drop/Drop";
+import DropdownExampleFloating from "../Drop/Drop";
 
 
 const BlogDetails = () => {
@@ -43,13 +45,17 @@ const BlogDetails = () => {
         {blog && <article>
         <div><span>{blog.title} by {blog.userId}</span></div>
         <div className="bodyBlog">{blog.body}</div>
-        </article>}
+        {/* <DropdownExampleFloating handleEdit={handleEdit} handlerDel={handlerDel}/> */}
+        </article>
+        
+        }
         <div className="buttons">
         <div><button className="blogBut" onClick={handlerBack}>Back</button></div>
         <div><button className="blogBut" onClick={handlerDel}>Delete</button></div>
         {!curBlog && <div><button className="blogBut" onClick={handleEdit}>Edit</button></div>}
         </div>
         {curBlog && <Edit blog={blog}/>}
+        
         
     </div>
    );

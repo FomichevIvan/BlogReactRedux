@@ -34,12 +34,14 @@ e.preventDefault()
 const editedBlog =  {title, body, userId: blog.userId, id: blog.id}
 dispatch(editBlogAC(editedBlog))
 setButVisible(!butVisible)
+e.target.children[1].disabled='true'
+e.target.children[3].disabled='true';
 
 
 }
   return ( 
     <div className="create">
-    
+    <h2>Edit Blog</h2>
     <form onSubmit={submitHandler}>
     <label>
       Blog title:
@@ -49,11 +51,7 @@ setButVisible(!butVisible)
       Blog body:
     </label>
     <textarea name="body" defaultValue={blog.body}type="text" required onChange={bodyHandler}></textarea>
-    {/* <label>
-      Blog author:
-    </label>
-    <input name="author" value={blog.userId} type="text" placeholder="author" onChange={authorHandler} required/> */}
-   <div className="contBut">
+    <div className="contBut">
   {butVisible && <button className="button">Edit Blog</button>}
   {!butVisible && <h2>Done!</h2>}
     

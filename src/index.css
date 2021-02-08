@@ -24,14 +24,7 @@
   border-top: 1px solid #f2f2f2;
   width: 600px;
 }
-/* .home {
-  height: 600px;
-  overflow: hidden;
-} */
-/* .App {
-  position: relative;
-  min-height: 100%;
-} */
+
 .footer nav {
   display: block;
   margin: 0 auto;
@@ -275,7 +268,7 @@ select:focus {
 }
 
 .home h2 {
-  padding-left: 50px;
+  /* padding-left: 50px; */
   margin-bottom: 25px;
 }
 

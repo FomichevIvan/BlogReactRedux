@@ -4,11 +4,14 @@ import PaginationExampleShorthand from "../Pagination/Pagination";
 import { useState } from "react";
 
 const BlogList = ({ blogs }) => {
+  
   const [page, setPage] = useState(1)
   const itemsOnPage = 10
   const lastBlogIndex = page * itemsOnPage
   const firstBlogIndex = lastBlogIndex - itemsOnPage
   const currentBlogs = blogs.slice(firstBlogIndex, lastBlogIndex)
+
+ 
 
 
   return (

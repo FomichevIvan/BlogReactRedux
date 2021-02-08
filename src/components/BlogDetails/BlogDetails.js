@@ -20,7 +20,7 @@ const BlogDetails = () => {
 
   // хэндлер, чтобы возвращаться назад
   const handlerBack = () => {
-    history.push('/')
+  history.goBack()
   }
   
 
@@ -30,19 +30,12 @@ const BlogDetails = () => {
   //удаление блога
   const handlerDel = () => {    
     dispatch(delBlogAC(id))
-    history.push('/')
+    history.goBack()
   }
 
   //редактирование блога
   const handleEdit = () => {
     setCurBlog(blog)
-    // dispatch(editBlogAC({
-    //   id: id,
-    //   title: "new title",
-    //   body: 'kjdg;kjsd;gkjsakldgjklasjdgklasjdgkljasdklgj',
-    //   userId: 'Ivan'
-    // }))
-
   }
 
   return ( 

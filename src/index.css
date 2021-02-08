@@ -125,7 +125,7 @@
 }
 
 .blog:hover {
-  width: 400px;
+  /* width: 400px; */
   box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -170,6 +170,7 @@ h1 {
   color: #2cb194;
 }
 .blogBut {
+  min-width: 100px;
   margin-top: 20px;
   padding: 5px;
   border: none;

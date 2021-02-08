@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import {useDispatch} from 'react-redux'
 import{useHistory } from "react-router-dom"
 import {useSelector} from 'react-redux'
-import {delBlogAC} from '../../redux/actionCreators'
+import {delBlogAC, editBlogAC} from '../../redux/actionCreators'
 
 
 const BlogDetails = () => {
@@ -13,22 +13,32 @@ const BlogDetails = () => {
 
   // подключаем возможность перемещаться по страницам
   const history = useHistory()
-  const id = history.location.pathname.match(/\d+$/gm)[0]//используем хистори и регулярки, чтобы получить айди
-// console.log(h);
+  // const id = history.location.pathname.match(/\d+$/gm)[0]//используем хистори и регулярки, чтобы получить айди
+  // можно было просто использовать useParams))
+
   // хэндлер, чтобы возвращаться назад
   const handlerBack = () => {
     history.push('/')
   }
   
-  // const r = h.match(/\d+$/gm)[0]
-  // console.log(r);
-  // const {id} = useParams()// мы задали в Апп.жс динамический маршрут. теперь мы используем данный айди
+
+  const {id} = useParams()// мы задали в App.js динамический маршрут. теперь мы используем данный айди
   const blog = store.filter(el => el.id === +id)[0]// получили блог из стора, он нулевой элемент нашего массива блогов
 
   //удаление блога
   const handlerDel = () => {    
     dispatch(delBlogAC(id))
     history.push('/')
+  }
+
+  //редактирование блога
+  const handleEdit = () => {
+    dispatch(editBlogAC({
+      id: id,
+      title: "new title",
+      body: 'kjdg;kjsd;gkjsakldgjklasjdgklasjdgkljasdklgj',
+      userId: 'Ivan'
+    }))
 
   }
 
@@ -39,8 +49,9 @@ const BlogDetails = () => {
         <div className="bodyBlog">{blog.body}</div>
         </article>}
         <div className="buttons">
-        <div><button className="blogBut" onClick={handlerBack}>Back to Blogs</button></div>
-        <div><button className="blogBut" onClick={handlerDel}>Delete Blog</button></div>
+        <div><button className="blogBut" onClick={handlerBack}>Back</button></div>
+        <div><button className="blogBut" onClick={handlerDel}>Delete</button></div>
+        <div><button className="blogBut" onClick={handleEdit}>Edit</button></div>
         </div>
         
     </div>

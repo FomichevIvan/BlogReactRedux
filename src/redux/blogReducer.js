@@ -1,4 +1,4 @@
-import { ADD_BLOGS, ADD_NEW_BLOG, DEL_BLOG, LIKE_BLOG } from "./actionTypes";
+import { ADD_BLOGS, ADD_NEW_BLOG, DEL_BLOG, EDIT_BLOG, LIKE_BLOG } from "./actionTypes";
 
 // 3. пишем редьюсер
 
@@ -26,6 +26,22 @@ export const blogReducer = (state = [], action) => {
           };
         }),
       ];
+
+      case EDIT_BLOG:
+        return [
+          ...state.map(blog => {
+            if(blog.id !== +action.payload.id) 
+            return blog
+            else return {
+              id: +action.payload.id,
+              title: action.payload.title,
+              body: action.payload.body,
+              userId: action.payload.userId,
+              isLiked: blog.isLiked
+            }
+          })
+          
+        ]
 
     default:
       return state;

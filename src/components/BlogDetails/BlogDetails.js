@@ -3,12 +3,14 @@ import {useDispatch} from 'react-redux'
 import{useHistory } from "react-router-dom"
 import {useSelector} from 'react-redux'
 import {delBlogAC, editBlogAC} from '../../redux/actionCreators'
+import { useState } from "react";
+import Edit from "../Edit/Edit";
 
 
 const BlogDetails = () => {
   const dispatch = useDispatch()// подключаем диспатч
   const store = useSelector(store => store)// выгружаем стор из редакс
-  console.log(store);
+  const [curBlog, setCurBlog] = useState(null)
 
 
   // подключаем возможность перемещаться по страницам
@@ -33,12 +35,13 @@ const BlogDetails = () => {
 
   //редактирование блога
   const handleEdit = () => {
-    dispatch(editBlogAC({
-      id: id,
-      title: "new title",
-      body: 'kjdg;kjsd;gkjsakldgjklasjdgklasjdgkljasdklgj',
-      userId: 'Ivan'
-    }))
+    setCurBlog(blog)
+    // dispatch(editBlogAC({
+    //   id: id,
+    //   title: "new title",
+    //   body: 'kjdg;kjsd;gkjsakldgjklasjdgklasjdgkljasdklgj',
+    //   userId: 'Ivan'
+    // }))
 
   }
 
@@ -51,8 +54,9 @@ const BlogDetails = () => {
         <div className="buttons">
         <div><button className="blogBut" onClick={handlerBack}>Back</button></div>
         <div><button className="blogBut" onClick={handlerDel}>Delete</button></div>
-        <div><button className="blogBut" onClick={handleEdit}>Edit</button></div>
+        {!curBlog && <div><button className="blogBut" onClick={handleEdit}>Edit</button></div>}
         </div>
+        {curBlog && <Edit blog={blog}/>}
         
     </div>
    );

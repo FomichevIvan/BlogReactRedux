@@ -125,12 +125,12 @@
 }
 
 .blog:hover {
-  /* max-width: 300px;  */
+  width: 400px;
   box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.1);
 }
 
 .blog {
-  margin: 10px;
+  margin-bottom: 5px;
   margin-left: 0;
   width: 100%;
 }
@@ -211,15 +211,13 @@ article span {
 textarea,
 select {
   text-align: left;
-  /* min-width: 300px; */
   width: 100%;
   display: block;
-  margin-top: 5px;
-  margin-bottom: 15px;
   border: 1px solid #2cb194;
   border-radius: 3px;
   background-color: #fff7f7;
   box-sizing: border-box;
+  font-style: italic;
 }
 .create input:focus,
 textarea:focus,
@@ -242,6 +240,8 @@ select:focus {
 }
 
 .create label {
+  margin-top: 10px;
+  margin-bottom: 0;
   text-align: left;
   display: block;
   font-weight: 500;
@@ -269,7 +269,6 @@ select:focus {
 }
 
 .create h2 {
-  
   text-align: center;
   padding-bottom: 20px;
 }
@@ -307,15 +306,19 @@ select:focus {
   height: 100vh;
 }
 
-.links a{
+.links a {
   color: grey;
   font-size: 1.1em;
 }
 
 /* #root > div > div.content > div > div > div.ui.pagination.pointing.secondary.menu */
-#root > div > div.content > div > div > div.ui.pagination.pointing.secondary.menu > a.active.item {
-
-
+#root
+  > div
+  > div.content
+  > div
+  > div
+  > div.ui.pagination.pointing.secondary.menu
+  > a.active.item {
   /* font-size: x-large; */
-  color:#ff5185
+  color: #ff5185;
 }

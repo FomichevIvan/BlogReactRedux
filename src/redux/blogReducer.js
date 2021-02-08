@@ -11,10 +11,10 @@ export const blogReducer = (state = [], action) => {
       return [...state, { ...action.payload, isLiked: false }]; //разворачиваем существующий стейт и дописываем туда пэйлоад в виде объекта с новым полем лайков
 
     case DEL_BLOG:
-      console.log(action.type);
+      
       return [...state.filter((el) => el.id !== +action.payload)]; // фильтруем и оставляем все элементы стейта, кроме того, айди которого равен переданному в экшн.пейлоад
     case LIKE_BLOG:
-      console.log(action.type)
+     
       return [
         ...state.map((blog) => {
           if (blog.id !== +action.payload) {

@@ -35,7 +35,7 @@ const newBlog =  {title, body, userId: author, id: Math.round(Math.random()*1000
 dispatch(addNewBlogAC(newBlog))
 e.target.name.value = ''
 e.target.body.value = ''
-e.target.author.value = 'Choose author'
+e.target.author.value = ''
 setNewBlog(`New Blog ${title} was added!)`)
 }
 
@@ -59,12 +59,7 @@ const handlerBack = () => {
       <label>
         Blog author:
       </label>
-      <select name="author" onChange={authorHandler}>
-       
-      <option  defaultValue="">Choose author</option>
-        <option value="guest">Guest</option>
-        <option value="me">Me</option>
-      </select>
+      <input name="author" type="text" placeholder="author" onChange={authorHandler} required/>
      <div className="contBut">
      <button className="button">Add Blog</button>
       {newBlog ? <button  onClick={handlerBack} className="button">Back to Blogs</button> : null}

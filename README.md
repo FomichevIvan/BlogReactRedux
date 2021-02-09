@@ -5,8 +5,9 @@ Async state - ReduxThunk <br>
 HTML - CSS, Semantic-UI  <br>
 
 
-# Запрос блогов с мокового сервера (json.placeholder)<br>
-Асинхронные операции - ReduxThunk
+Запрос блогов с мокового сервера (json.placeholder) <br>
+
+Асинхронные операции - ReduxThunk <br>
 Возможность добавлять блоги <br>
 Возможность редактировать блоги <br>
 Возможность удалять блоги <br>

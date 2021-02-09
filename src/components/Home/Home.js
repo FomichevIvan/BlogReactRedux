@@ -14,7 +14,7 @@ const Home = () => {
 
   const loadHandler = () => {
     setIsLoading(!isLoading);
-    setTimeout(() => dispatch(loadBlogsAC()), 1500);
+    setTimeout(() => dispatch(loadBlogsAC()), 1000);
     setIsLoading(!isLoading);
   };
   // подгружаем стор

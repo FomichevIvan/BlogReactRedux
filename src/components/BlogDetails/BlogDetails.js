@@ -11,7 +11,7 @@ import DropdownExampleFloating from "../Drop/Drop";
 
 const BlogDetails = () => {
   const dispatch = useDispatch()// подключаем диспатч
-  const store = useSelector(store => store)// выгружаем стор из редакс
+  const store = useSelector(store => store.blogs)// выгружаем стор из редакс
   const [curBlog, setCurBlog] = useState(null)
 
 

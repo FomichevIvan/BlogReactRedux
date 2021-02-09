@@ -4,13 +4,18 @@ import { loadBlogsAC } from "../../redux/actionCreators";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
+
 import LoaderExampleText from "../Loader/Loader";
 
 const Home = () => {
+ 
   const [isLoading, setIsLoading] = useState(false);
 
+
   const dispatch = useDispatch();
-  const blogs = useSelector((store) => store);
+  const blogs = useSelector((store) => store.blogs);
+  const error = useSelector(store => store.errors)
+  
 
   const loadHandler = () => {
     setIsLoading(!isLoading);
@@ -31,6 +36,7 @@ const Home = () => {
             </button>
           )}
           {isLoading && <LoaderExampleText />}
+          {error && <h1>{error}</h1>}
         </div>
       )}
     </>

@@ -5,6 +5,15 @@ Async state - ReduxThunk <br>
 HTML - CSS, Semantic-UI  <br>
 
 
+# Запрос блогов с мокового сервера (json.placeholder)<br>
+Асинхронные операции - ReduxThunk
+Возможность добавлять блоги <br>
+Возможность редактировать блоги <br>
+Возможность удалять блоги <br>
+Возможность добавлять в избранное <br>
+Пагинация, лоадер, иконки - semantic.ui <br>
+
+
 
 <img src="https://github.com/FomichevIvan/BlogReactRedux/blob/master/img/firstpage.png" width="70%"> 
 <hr>

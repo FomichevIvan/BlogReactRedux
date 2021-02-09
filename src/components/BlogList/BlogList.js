@@ -25,7 +25,7 @@ const BlogList = ({ blogs }) => {
             <div key={blog.id} className="card">
               <Link className="details" to={`blogs/${blog.id}`}>
                 <div className="blog">
-                  <h3>Title: {blog.title.length > 30 ? blog.title.slice(0, 30) + "..." : blog.title}</h3>
+                  <h3>Title: {blog.title.length > 25 ? blog.title.slice(0, 25) + "..." : blog.title}</h3>
                   <p className="author">Author: {blog.userId} </p>
                 </div>
               </Link>

@@ -33,10 +33,7 @@ export const blogReducer = (state = [], action) => {
             if(blog.id !== +action.payload.id) 
             return blog
             else return {
-              id: +action.payload.id,
-              title: action.payload.title,
-              body: action.payload.body,
-              userId: action.payload.userId,
+              ...action.payload,
               isLiked: blog.isLiked
             }
           })
